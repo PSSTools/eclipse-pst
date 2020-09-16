@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editorContentTypeBinding
+            contentTypeId="com.github.psstools.eps.core.pss"
+            editorId="org.eclipse.ui.genericeditor.GenericEditor">
+      </editorContentTypeBinding>
+   </extension>
+   <extension
+         point="org.eclipse.tm4e.registry.grammars">
+      <grammar
+            path="syntaxes/pss.tmLanguage.json"
+            scopeName="source.pss">
+      </grammar>
+      <scopeNameContentTypeBinding
+            contentTypeId="com.github.psstools.eps.core.pss"
+            scopeName="source.pss">
+      </scopeNameContentTypeBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.genericeditor.presentationReconcilers">
+      <presentationReconciler
+            class="org.eclipse.tm4e.ui.text.TMPresentationReconciler"
+            contentType="com.github.psstools.eps.core.pss">
+      </presentationReconciler>
+   </extension>
+   <extension
+         point="org.eclipse.tm4e.languageconfiguration.languageConfigurations">
+      <languageConfiguration
+            contentTypeId="com.github.psstools.eps.core.pss"
+            path="language-configuration.json">
+      </languageConfiguration>
+   </extension>
+
+</plugin>
