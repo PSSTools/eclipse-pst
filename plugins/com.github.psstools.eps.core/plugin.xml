@@ -11,5 +11,23 @@
             priority="normal">
       </content-type>
    </extension>
+   <extension
+         point="org.eclipse.lsp4e.languageServer">
+     <server
+        class="org.eclipse.corrosion.edit.RLSStreamConnectionProvider"
+        id="org.eclipse.corrosion.rls"
+        label="org.eclipse.corrosion.RLS"
+        clientImpl="org.eclipse.corrosion.edit.RLSClientImplementation"
+        serverInterface="org.eclipse.corrosion.edit.RLSServerInterface">
+      </server>
+      <contentTypeMapping
+            contentType="org.eclipse.corrosion.rust"
+            id="org.eclipse.corrosion.rls">
+      </contentTypeMapping>
+      <contentTypeMapping
+            contentType="org.eclipse.corrosion.manifest"
+            id="org.eclipse.corrosion.rls">
+      </contentTypeMapping>
+   </extension>   
 
 </plugin>
