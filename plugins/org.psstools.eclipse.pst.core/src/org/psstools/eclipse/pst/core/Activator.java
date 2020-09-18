@@ -1,4 +1,4 @@
-package com.github.psstools.eps.core;
+package org.psstools.eclipse.pst.core;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;

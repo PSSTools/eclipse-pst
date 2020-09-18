@@ -6,7 +6,7 @@
       <content-type
             base-type="org.eclipse.core.runtime.text"
             file-extensions="pss"
-            id="com.github.psstools.eps.core.pss"
+            id="org.psstools.eclipse.pst.core.pss"
             name="PSS"
             priority="normal">
       </content-type>

@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.ui.editors">
       <editorContentTypeBinding
-            contentTypeId="com.github.psstools.eps.core.pss"
+            contentTypeId="org.psstools.eclipse.pst.core.pss"
             editorId="org.eclipse.ui.genericeditor.GenericEditor">
       </editorContentTypeBinding>
    </extension>
@@ -15,7 +15,7 @@
             scopeName="source.pss">
       </grammar>
       <scopeNameContentTypeBinding
-            contentTypeId="com.github.psstools.eps.core.pss"
+            contentTypeId="org.psstools.eclipse.pst.core.pss"
             scopeName="source.pss">
       </scopeNameContentTypeBinding>
    </extension>
@@ -23,13 +23,13 @@
          point="org.eclipse.ui.genericeditor.presentationReconcilers">
       <presentationReconciler
             class="org.eclipse.tm4e.ui.text.TMPresentationReconciler"
-            contentType="com.github.psstools.eps.core.pss">
+            contentType="org.psstools.eclipse.pst.core.pss">
       </presentationReconciler>
    </extension>
    <extension
          point="org.eclipse.tm4e.languageconfiguration.languageConfigurations">
       <languageConfiguration
-            contentTypeId="com.github.psstools.eps.core.pss"
+            contentTypeId="org.psstools.eclipse.pst.core.pss"
             path="language-configuration.json">
       </languageConfiguration>
    </extension>
