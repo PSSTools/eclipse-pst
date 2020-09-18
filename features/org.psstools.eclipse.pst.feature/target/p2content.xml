@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<units size='4'>
+  <unit id='org.psstools.eclipse.pst.feature.feature.group' version='1.0.0.v20200918-0146' singleton='false'>
+    <update id='org.psstools.eclipse.pst.feature.feature.group' range='[0.0.0,1.0.0.v20200918-0146)' severity='0'/>
+    <properties size='7'>
+      <property name='org.eclipse.equinox.p2.name' value='Feature'/>
+      <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
+      <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
+      <property name='org.eclipse.equinox.p2.type.group' value='true'/>
+      <property name='maven-groupId' value='org.psstools.eclipse.pst'/>
+      <property name='maven-artifactId' value='org.psstools.eclipse.pst.feature'/>
+      <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+    </properties>
+    <provides size='1'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='org.psstools.eclipse.pst.feature.feature.group' version='1.0.0.v20200918-0146'/>
+    </provides>
+    <requires size='3'>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.psstools.eclipse.pst.core' range='[1.0.0.v20200918-0146,1.0.0.v20200918-0146]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.psstools.eclipse.pst.ui' range='[1.0.0.v20200918-0059,1.0.0.v20200918-0059]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.psstools.eclipse.pst.feature.feature.jar' range='[1.0.0.v20200918-0146,1.0.0.v20200918-0146]'>
+        <filter>
+          (org.eclipse.update.install.features=true)
+        </filter>
+      </required>
+    </requires>
+    <touchpoint id='null' version='0.0.0'/>
+    <licenses size='1'>
+      <license uri='http://www.example.com/license' url='http://www.example.com/license'>
+        [Enter License Description here.]
+      </license>
+    </licenses>
+    <copyright uri='http://www.example.com/copyright' url='http://www.example.com/copyright'>
+      [Enter Copyright Description here.]
+    </copyright>
+  </unit>
+  <unit id='org.psstools.eclipse.pst.feature.feature.jar' version='1.0.0.v20200918-0146'>
+    <properties size='6'>
+      <property name='org.eclipse.equinox.p2.name' value='Feature'/>
+      <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
+      <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
+      <property name='maven-groupId' value='org.psstools.eclipse.pst'/>
+      <property name='maven-artifactId' value='org.psstools.eclipse.pst.feature'/>
+      <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+    </properties>
+    <provides size='3'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='org.psstools.eclipse.pst.feature.feature.jar' version='1.0.0.v20200918-0146'/>
+      <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
+      <provided namespace='org.eclipse.update.feature' name='org.psstools.eclipse.pst.feature' version='1.0.0.v20200918-0146'/>
+    </provides>
+    <filter>
+      (org.eclipse.update.install.features=true)
+    </filter>
+    <artifacts size='1'>
+      <artifact classifier='org.eclipse.update.feature' id='org.psstools.eclipse.pst.feature' version='1.0.0.v20200918-0146'/>
+    </artifacts>
+    <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+    <touchpointData size='1'>
+      <instructions size='1'>
+        <instruction key='zipped'>
+          true
+        </instruction>
+      </instructions>
+    </touchpointData>
+    <licenses size='1'>
+      <license uri='http://www.example.com/license' url='http://www.example.com/license'>
+        [Enter License Description here.]
+      </license>
+    </licenses>
+    <copyright uri='http://www.example.com/copyright' url='http://www.example.com/copyright'>
+      [Enter Copyright Description here.]
+    </copyright>
+  </unit>
+  <unit id='org.psstools.eclipse.pst.feature.source.feature.group' version='1.0.0.v20200918-0146' singleton='false'>
+    <update id='org.psstools.eclipse.pst.feature.source.feature.group' range='[0.0.0,1.0.0.v20200918-0146)' severity='0'/>
+    <properties size='8'>
+      <property name='org.eclipse.equinox.p2.name' value='Feature Developer Resources'/>
+      <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
+      <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
+      <property name='org.eclipse.equinox.p2.type.group' value='true'/>
+      <property name='maven-groupId' value='org.psstools.eclipse.pst'/>
+      <property name='maven-artifactId' value='org.psstools.eclipse.pst.feature'/>
+      <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      <property name='maven-classifier' value='sources-feature'/>
+    </properties>
+    <provides size='1'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='org.psstools.eclipse.pst.feature.source.feature.group' version='1.0.0.v20200918-0146'/>
+    </provides>
+    <requires size='4'>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.psstools.eclipse.pst.feature.feature.group' range='[1.0.0.v20200918-0146,1.0.0.v20200918-0146]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.psstools.eclipse.pst.core.source' range='[1.0.0.v20200918-0146,1.0.0.v20200918-0146]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.psstools.eclipse.pst.ui.source' range='[1.0.0.v20200918-0059,1.0.0.v20200918-0059]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.psstools.eclipse.pst.feature.source.feature.jar' range='[1.0.0.v20200918-0146,1.0.0.v20200918-0146]'>
+        <filter>
+          (org.eclipse.update.install.features=true)
+        </filter>
+      </required>
+    </requires>
+    <touchpoint id='null' version='0.0.0'/>
+    <licenses size='1'>
+      <license uri='http://www.example.com/license' url='http://www.example.com/license'>
+        [Enter License Description here.]
+      </license>
+    </licenses>
+    <copyright uri='http://www.example.com/copyright' url='http://www.example.com/copyright'>
+      [Enter Copyright Description here.]
+    </copyright>
+  </unit>
+  <unit id='org.psstools.eclipse.pst.feature.source.feature.jar' version='1.0.0.v20200918-0146'>
+    <properties size='7'>
+      <property name='org.eclipse.equinox.p2.name' value='Feature Developer Resources'/>
+      <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
+      <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
+      <property name='maven-groupId' value='org.psstools.eclipse.pst'/>
+      <property name='maven-artifactId' value='org.psstools.eclipse.pst.feature'/>
+      <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      <property name='maven-classifier' value='sources-feature'/>
+    </properties>
+    <provides size='3'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='org.psstools.eclipse.pst.feature.source.feature.jar' version='1.0.0.v20200918-0146'/>
+      <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
+      <provided namespace='org.eclipse.update.feature' name='org.psstools.eclipse.pst.feature.source' version='1.0.0.v20200918-0146'/>
+    </provides>
+    <filter>
+      (org.eclipse.update.install.features=true)
+    </filter>
+    <artifacts size='1'>
+      <artifact classifier='org.eclipse.update.feature' id='org.psstools.eclipse.pst.feature.source' version='1.0.0.v20200918-0146'/>
+    </artifacts>
+    <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+    <touchpointData size='1'>
+      <instructions size='1'>
+        <instruction key='zipped'>
+          true
+        </instruction>
+      </instructions>
+    </touchpointData>
+    <licenses size='1'>
+      <license uri='http://www.example.com/license' url='http://www.example.com/license'>
+        [Enter License Description here.]
+      </license>
+    </licenses>
+    <copyright uri='http://www.example.com/copyright' url='http://www.example.com/copyright'>
+      [Enter Copyright Description here.]
+    </copyright>
+  </unit>
+</units>

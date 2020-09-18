@@ -163,8 +163,8 @@
 				<configuration>
 					<target>
 						<artifact>
-							<groupId>org.eclipse.hdt</groupId>
-							<artifactId>org.eclipse.hdt.target</artifactId>
+							<groupId>org.psstools.eclipse.pst</groupId>
+							<artifactId>org.psstools.eclipse.pst.target</artifactId>
 							<version>${project.parent.version}</version>
 						</artifact>
 					</target>

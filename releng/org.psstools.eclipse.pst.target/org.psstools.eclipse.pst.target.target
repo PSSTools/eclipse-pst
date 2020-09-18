@@ -30,6 +30,10 @@
 			<repository location="http://download.eclipse.org/tools/gef/updates/legacy/releases/4.0.0_gef-master_1952/"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="org.eclipse.tm4e.feature.feature.group" version="0.0.0"/>
+			<repository location="http://download.eclipse.org/tm4e/snapshots/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 			<unit id="com.fasterxml.jackson.core.jackson-annotations" version="0.0.0"/>
 			<unit id="com.fasterxml.jackson.core.jackson-annotations.source" version="0.0.0"/>
 			<unit id="com.fasterxml.jackson.core.jackson-core" version="0.0.0"/>
