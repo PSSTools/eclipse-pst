@@ -22,7 +22,7 @@ jobs:
         cache-name: cache-maven-repo
       with:
         path: ~/.m2/repository
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hasFiles('**/*.sha1') }}
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/*.sha1') }}
         restore-keys: |
           ${{ runner.os }}-build-${{ env.cache-name }}-
           ${{ runner.os }}-build-
