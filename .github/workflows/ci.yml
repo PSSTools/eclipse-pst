@@ -39,7 +39,7 @@ jobs:
         version=`ls features/*feature_*.jar | sed -e 's/^.*org.psstools.eclipse.pst.feature_\(.*\).jar/\1/'`
         echo "in repository directory: version=${version}"
         for file in *.jar *.xml.xz *.index ; do
-          curl -T ${file} -u${{ secregs.BINTRAY_USERNAME }}:${{ secrets.BINTRAY_API_KEY }} ${BINTRAY_SITE_URL}/${file};publish=1;override=1
+          curl -T ${file} -u${{ secrets.BINTRAY_USERNAME }}:${{ secrets.BINTRAY_API_KEY }} ${BINTRAY_SITE_URL}/${file};publish=1;override=1
         done
         for file in features/*.jar plugins/*.jar; do
           echo "upload $file"
