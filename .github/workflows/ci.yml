@@ -32,19 +32,15 @@ jobs:
     - name: Bintray upload
       run: |
         echo "GITHUB_REF=${GITHUB_REF}"
-        curl --help
         #        if "${GITHUB_REF}" = "refs/heads/master"; then
-          echo "Full release"
-          export BINTRAY_SITE_URL=https://api.bintray.com/content/${BINTRAY_USERNAME}/psstools/eclipse-pst
-          cd releng/org.psstools.eclipse.pst.repository/target/repository
-          echo "in repository directory"
-          ls
-          for file in *.jar *.xml.xz *.index features/*.jar plugins/*.jar; do
-              echo "upload $file"
-              curl -T $file -u${BINTRAY_USERNAME}:${BINTRAY_API_KEY} ${BINTRAY_SITE_URL}/update/$file;publish=1;override=1
-          done
-          #else
-          #          echo "Snapshot release"
-          #        fi
+        echo "Full release"
+        export BINTRAY_SITE_URL=https://api.bintray.com/content/${BINTRAY_USERNAME}/eclipse-pst
+        cd releng/org.psstools.eclipse.pst.repository/target/repository
+        echo "in repository directory"
+        ls
+        for file in *.jar *.xml.xz *.index features/*.jar plugins/*.jar; do
+          echo "upload $file"
+          curl -T $file -u${BINTRAY_USERNAME}:${BINTRAY_API_KEY} ${BINTRAY_SITE_URL}/update/$file;publish=1;override=1
+        done
 
 
