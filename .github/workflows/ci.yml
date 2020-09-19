@@ -35,7 +35,14 @@ jobs:
         curl --help
         if "${GITHUB_REF}" = "refs/heads/master"; then
           echo "Full release"
-          /bin/sh scripts/upload.sh release
+          export BINTRAY_SITE_URL=https://api.bintray.com/content/${BINTRAY_USERNAME}/psstools/eclipse-pst
+          cd releng/org.psstools.eclipse.pst.repository/target/repository
+          for file in *.jar *.xml.xz *.index features/*.jar plugins/*.jar; do
+              echo "upload $file"
+              curl -T $file -u${BINTRAY_USERNAME}:${BINTRAY_API_KEY} ${BINTRAY_SITE_URL}/update/$file;publish=1;override=1
+          done
         else
           echo "Snapshot release"
+        fi
+
 
