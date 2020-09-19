@@ -29,4 +29,15 @@ jobs:
           ${{ runner.os }}-
     - name: Build with Maven
       run: mvn clean verify --no-transfer-progress -U -Pcoverage
+    - name: Bintray upload
+      run: |
+        echo "GITHUB_REF=${GITHUB_REF}"
+        git describe --exact-match `git rev-parse HEAD`
+        if test $? -ne 0; then
+          echo "Snapshot release"
+          /bin/sh scripts/upload.sh testing
+        else
+          echo "Full release"
+          /bin/sh scripts/upload.sh release
+
 
