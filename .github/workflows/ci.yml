@@ -40,8 +40,8 @@ jobs:
         ls
         for file in *.jar *.xml.xz *.index features/*.jar plugins/*.jar; do
           echo "upload $file"
-          echo "Command: curl -T $file -u${BINTRAY_USERNAME}:${BINTRAY_API_KEY} ${BINTRAY_SITE_URL}/update/${file};publish=1;override=1"
-          curl -T $file -u${BINTRAY_USERNAME}:${BINTRAY_API_KEY} ${BINTRAY_SITE_URL}/update/$file;publish=1;override=1
+          echo "Command: curl -T $file -u${{ secrets.BINTRAY_USERNAME }}:${{ secrets.BINTRAY_API_KEY }} ${BINTRAY_SITE_URL}/update/${file};publish=1;override=1"
+          curl -T $file -u${{ secrets.BINTRAY_USERNAME }}:${{ secrets.BINTRAY_API_KEY }} ${BINTRAY_SITE_URL}/update/$file;publish=1;override=1
         done
 
 
