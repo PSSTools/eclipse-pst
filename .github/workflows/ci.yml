@@ -34,7 +34,7 @@ jobs:
         echo "GITHUB_REF=${GITHUB_REF}"
         #        if "${GITHUB_REF}" = "refs/heads/master"; then
         echo "Full release"
-        export BINTRAY_SITE_URL=https://api.bintray.com/content/${BINTRAY_USERNAME}/eclipse-pst
+        export BINTRAY_SITE_URL=https://api.bintray.com/content/${{ secrets.BINTRAY_USERNAME }}/eclipse-pst
         cd releng/org.psstools.eclipse.pst.repository/target/repository
         echo "in repository directory"
         ls
