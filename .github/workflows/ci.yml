@@ -34,14 +34,17 @@ jobs:
         echo "GITHUB_REF=${GITHUB_REF}"
         #        if "${GITHUB_REF}" = "refs/heads/master"; then
         echo "Full release"
-        export BINTRAY_SITE_URL=https://api.bintray.com/content/${{ secrets.BINTRAY_USERNAME }}/psstools/eclipse-pst
+        export BINTRAY_SITE_URL=https://api.bintray.com/content/${{ secrets.BINTRAY_USERNAME }}/eclipse-pst
         cd releng/org.psstools.eclipse.pst.repository/target/repository
-        echo "in repository directory"
-        ls
-        for file in *.jar *.xml.xz *.index features/*.jar plugins/*.jar; do
-          echo "upload $file"
-          echo "Command: curl -T $file -u${{ secrets.BINTRAY_USERNAME }}:${{ secrets.BINTRAY_API_KEY }} ${BINTRAY_SITE_URL}/update/${file};publish=1;override=1"
-          curl -T $file -u${{ secrets.BINTRAY_USERNAME }}:${{ secrets.BINTRAY_API_KEY }} ${BINTRAY_SITE_URL}/update/$file;publish=1;override=1
+        version=`ls features/*feature_*.jar | sed -e 's/^.*org.psstools.eclipse.pst.feature_\(.*\).jar/\1/'`
+        echo "in repository directory: version=${version}"
+        for file in *.jar *.xml.xz *.index ; do
+          curl -T ${file} -u${{ secregs.BINTRAY_USERNAME }}:${{ secrets.BINTRAY_API_KEY }} ${BINTRAY_SITE_URL}/${file};publish=1;override=1
         done
+        for file in features/*.jar plugins/*.jar; do
+          echo "upload $file"
+          curl -T $file -u${{ secrets.BINTRAY_USERNAME }}:${{ secrets.BINTRAY_API_KEY }} ${BINTRAY_SITE_URL}/update/${version}/$file
+        done
+        curl -X POST -u${{ secrets.BINTRAY_USERNAME }}:${{ secrets.BINTRAY_API_KEY }} ${BINTRAY_SITE_URL}/update/${version}/publish
 
 
