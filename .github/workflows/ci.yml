@@ -32,12 +32,10 @@ jobs:
     - name: Bintray upload
       run: |
         echo "GITHUB_REF=${GITHUB_REF}"
-        git describe --exact-match `git rev-parse HEAD`
-        if test $? -ne 0; then
-          echo "Snapshot release"
-          /bin/sh scripts/upload.sh testing
-        else
+        curl --help
+        if "${GITHUB_REF}" = "refs/heads/master"; then
           echo "Full release"
           /bin/sh scripts/upload.sh release
-
+        else
+          echo "Snapshot release"
 
