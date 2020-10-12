@@ -14,19 +14,15 @@
    <extension
          point="org.eclipse.lsp4e.languageServer">
      <server
-        class="org.eclipse.corrosion.edit.RLSStreamConnectionProvider"
-        id="org.eclipse.corrosion.rls"
-        label="org.eclipse.corrosion.RLS"
-        clientImpl="org.eclipse.corrosion.edit.RLSClientImplementation"
-        serverInterface="org.eclipse.corrosion.edit.RLSServerInterface">
+        class="org.psstools.eclipse.pst.core.PSSConnectionProvider"
+        id="org.psstools.eclipse.pst.core.cp"
+        label="Connection Provider"
+        clientImpl="org.psstools.eclipse.pst.core.PSSLanguageServerClientImpl"
+        serverInterface="org.psstools.eclipse.pst.core.PSSLanguageServerInterface">
       </server>
       <contentTypeMapping
-            contentType="org.eclipse.corrosion.rust"
-            id="org.eclipse.corrosion.rls">
-      </contentTypeMapping>
-      <contentTypeMapping
-            contentType="org.eclipse.corrosion.manifest"
-            id="org.eclipse.corrosion.rls">
+            contentType="org.psstools.eclipse.pst.core.pss"
+            id="org.psstools.eclipse.pst.core.cp">
       </contentTypeMapping>
    </extension>   
 
