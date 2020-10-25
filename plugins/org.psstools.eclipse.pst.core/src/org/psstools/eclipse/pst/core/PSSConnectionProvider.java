@@ -1,5 +1,6 @@
 package org.psstools.eclipse.pst.core;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -7,7 +8,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URI;
 
-import org.eclipse.lsp4e.server.ProcessOverSocketStreamConnectionProvider;
 import org.eclipse.lsp4e.server.ProcessStreamConnectionProvider;
 import org.eclipse.lsp4j.jsonrpc.messages.Message;
 import org.eclipse.lsp4j.services.LanguageServer;
@@ -32,11 +32,13 @@ public class PSSConnectionProvider extends ProcessStreamConnectionProvider {
 			e.printStackTrace();
 		}
 		
-		String server_path = "/project/fun/psslangserver/psslangserver/build/psslangserver";
+//		String server_path = "/project/fun/psslangserver/psslangserver/build/psslangserver";
+//		String server_path = "c:/usr1/fun/psslangserver/psslangserver/build/psslangserver";
+		File server_path = Activator.getLanguageServer();
 	
 		try {
 			m_server_proc = Runtime.getRuntime().exec(new String[] {
-					server_path,
+					server_path.getAbsolutePath(),
 					"-port",
 					"" + port
 			});
