@@ -25,6 +25,10 @@
 		<category name="org.psstools.eclipse.pst.category" />
 	</feature>
 
+        <bundle id="org.eclipse.lsp4e" version="0.0.0">
+                <category name="org.psstools.eclipse.pst.dependecies.category"/>
+        </bundle>
+
 	<category-def
 		name="org.psstools.eclipse.pst.category.source"
 		label="Eclipse PST Developer Resources"
