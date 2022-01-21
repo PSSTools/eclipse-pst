@@ -29,22 +29,13 @@ jobs:
           ${{ runner.os }}-
     - name: Build with Maven
       run: mvn clean verify --no-transfer-progress -U -Pcoverage
-    - name: Bintray upload
+    - name: Setup site data
       run: |
-        echo "GITHUB_REF=${GITHUB_REF}"
-        #        if "${GITHUB_REF}" = "refs/heads/master"; then
-        echo "Full release"
-        export BINTRAY_SITE_URL=https://api.bintray.com/content/${{ secrets.BINTRAY_USERNAME }}/eclipse-pst
-        cd releng/org.psstools.eclipse.pst.repository/target/repository
-        version=`ls features/*feature_*.jar | sed -e 's/^.*org.psstools.eclipse.pst.feature_\(.*\).jar/\1/'`
-        echo "in repository directory: version=${version}"
-        for file in *.jar *.xml.xz *.index ; do
-          curl -T ${file} -u${{ secrets.BINTRAY_USERNAME }}:${{ secrets.BINTRAY_API_KEY }} ${BINTRAY_SITE_URL}/${file};publish=1;override=1
-        done
-        for file in features/*.jar plugins/*.jar; do
-          echo "upload $file"
-          curl -T $file -u${{ secrets.BINTRAY_USERNAME }}:${{ secrets.BINTRAY_API_KEY }} ${BINTRAY_SITE_URL}/update/${version}/$file
-        done
-        curl -X POST -u${{ secrets.BINTRAY_USERNAME }}:${{ secrets.BINTRAY_API_KEY }} ${BINTRAY_SITE_URL}/update/${version}/publish
-
+        mkdir web
+        cp releng/org.psstools.eclipse.pst.repository/target/repository web/update
+    - name: Deploy Site
+      uses: JamesIves/github-pages-deploy-action@4.1.7
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: web # The folder the action should deploy.
 
