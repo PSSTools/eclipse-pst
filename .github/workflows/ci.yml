@@ -32,6 +32,7 @@ jobs:
     - name: Setup site data
       run: |
         mkdir web
+        echo "Placeholder" > web/index.html
         cp -r releng/org.psstools.eclipse.pst.repository/target/repository web/update
     - name: Deploy Site
       uses: JamesIves/github-pages-deploy-action@4.1.7
